@@ -11,7 +11,7 @@
 		5B6C633D26F0555600096EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C633C26F0555600096EAC /* ViewController.swift */; };
 		5B6C633F26F0555900096EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C633E26F0555900096EAC /* Assets.xcassets */; };
 		5B6C634226F0555900096EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C634026F0555900096EAC /* Main.storyboard */; };
-		5B6C634D26F0778200096EAC /* jsonFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C634B26F0563500096EAC /* jsonFile.json */; };
+		5B6C634D26F0778200096EAC /* RowStringFile in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C634B26F0563500096EAC /* RowStringFile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		5B6C634126F0555900096EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B6C634326F0555900096EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B6C634426F0555900096EAC /* LocalStringFileCteater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalStringFileCteater.entitlements; sourceTree = "<group>"; };
-		5B6C634B26F0563500096EAC /* jsonFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = jsonFile.json; sourceTree = "<group>"; };
+		5B6C634B26F0563500096EAC /* RowStringFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RowStringFile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 		5B6C633926F0555600096EAC /* LocalStringFileCteater */ = {
 			isa = PBXGroup;
 			children = (
-				5B6C634A26F0557400096EAC /* JsonFile */,
+				5B6C634A26F0557400096EAC /* RowStringFile */,
 				5B6C633A26F0555600096EAC /* AppDelegate.swift */,
 				5B6C633C26F0555600096EAC /* ViewController.swift */,
 				5B6C633E26F0555900096EAC /* Assets.xcassets */,
@@ -66,12 +66,12 @@
 			path = LocalStringFileCteater;
 			sourceTree = "<group>";
 		};
-		5B6C634A26F0557400096EAC /* JsonFile */ = {
+		5B6C634A26F0557400096EAC /* RowStringFile */ = {
 			isa = PBXGroup;
 			children = (
-				5B6C634B26F0563500096EAC /* jsonFile.json */,
+				5B6C634B26F0563500096EAC /* RowStringFile */,
 			);
-			path = JsonFile;
+			path = RowStringFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B6C634D26F0778200096EAC /* jsonFile.json in Resources */,
+				5B6C634D26F0778200096EAC /* RowStringFile in Resources */,
 				5B6C633F26F0555900096EAC /* Assets.xcassets in Resources */,
 				5B6C634226F0555900096EAC /* Main.storyboard in Resources */,
 			);

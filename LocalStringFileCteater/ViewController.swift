@@ -11,68 +11,61 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 1. 按列复制excel中的配置 转成json http://www.ab173.com/json/col2json.php
+        // 1. 按列复制excel中的配置(第一行需要是表头) 粘贴到文件 RowStringFile -> RowStringFile
         
-        // 2. 复制转换结果 粘贴到文件 JsonFile->jsonFile.json
+        // 2. 运行本程序
         
-        // 3. 运行本程序
-        
-        // 4. 查看生成的文件(~/Desktop/outStringFiles/)  拖动生成的文件夹到原项目中覆盖全部即可
+        // 3. 查看生成的文件(~/Desktop/outStringFiles/)  拖动生成的文件夹到原项目中覆盖全部即可
         
         // 读数据
-        let jsonPath = Bundle.main.path(forResource: "jsonFile", ofType: "json")
-        guard let jsonString = try? String(contentsOfFile: jsonPath!), let jsonData = jsonString.data(using: .utf8) else {
-            print("Error: json 配置为空-")
+        let filePath = Bundle.main.path(forResource: "RowStringFile", ofType: "")!
+        guard let rowString = try? String(contentsOfFile: filePath) else {
+            print("Error: rowString 配置为空-")
             return
         }
-         
-        guard let arr = try? JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions(rawValue: 0)),
-              var jsonArr = arr as? [[String: String]],
-              !jsonArr.isEmpty
-        else {
-            print("Error: json 配置为空")
-            exit(0)
+        let linesSeparater = "\n" // 按行解析
+        var rowArr = rowString.components(separatedBy: linesSeparater)
+        guard !rowArr.isEmpty else {
+            print("Error: rowString 配置无效")
             return
         }
-
-        // 检测数据
+        let rowSeparater = "   " // 默认是一个tab符号
+        let firtHeadArr = rowArr.removeFirst().components(separatedBy: rowSeparater)
+        guard !firtHeadArr.isEmpty else {
+            print("Error: rowString 配置无效-")
+            return
+        }
         var jsonArrVaild = true
-        let columnCout = jsonArr.first?.count
-        jsonArr = jsonArr.filter { item in
-            if item.isEmpty {
-                // 丢弃空列
-                return false
+        let jsonArr = rowArr.compactMap { itemStr -> [String : String]? in
+            
+            guard !itemStr.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty else {
+                return nil // 过滤空行 按列赋值可能有空行
             }
-            guard item.count == columnCout else {
-                print("Error: 配置缺失列: \(item)")
+            
+            let arr = itemStr.components(separatedBy: rowSeparater)
+            guard arr.count == firtHeadArr.count else {
                 jsonArrVaild = false
-                return false
+                print("Error: 配置缺失列: \(arr.joined(separator: "\n"))")
+                return nil
             }
-
-            var vaild = true
-            item.forEach { (_: String, value: String) in
-                if value.isEmpty {
-                    vaild = false
-                }
-            }
-            if !vaild {
-                print("Error: 配置列不能为空字符串: \(item)")
+            let filtedArr = arr.filter { !$0.isEmpty }
+            guard filtedArr.count == firtHeadArr.count else {
                 jsonArrVaild = false
+                print("Error: 配置列存在空字符串: \(filtedArr.joined(separator: "\n"))")
+                return nil
             }
-            return vaild
+            return Dictionary(uniqueKeysWithValues: zip(firtHeadArr, arr))
+        }
+        if !jsonArrVaild {
+            print("Error: 请先解决控制台打印错误")
+            return
         }
         
-        if !jsonArrVaild {
-            print("Error: 请先修改控制台打印错误")
-            exit(0)
-            return
-        }
         
         // 生成文件内容
         let key = "中文"
-        let keys = (jsonArr.first ?? [:]).keys
         var filesMap = [String: [String: String]]()
-        for name in keys {
+        for name in firtHeadArr {
             var kvMap = [String: String]()
             jsonArr.forEach { item in
                 let keyVal = item[key]!
