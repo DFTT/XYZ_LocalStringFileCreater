@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,10 +11,27 @@
 		5B6C633D26F0555600096EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C633C26F0555600096EAC /* ViewController.swift */; };
 		5B6C633F26F0555900096EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C633E26F0555900096EAC /* Assets.xcassets */; };
 		5B6C634226F0555900096EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C634026F0555900096EAC /* Main.storyboard */; };
-		5B6C634D26F0778200096EAC /* RowStringFile in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C634B26F0563500096EAC /* RowStringFile */; };
+		5B73437A28FFF43500EFA73E /* RowStringFile.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 5B73437928FFF43500EFA73E /* RowStringFile.xlsx */; };
+		5B7343852900E94300EFA73E /* Pods_LocalStringFileCteater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033C51FB9F14C7CC71A818DC /* Pods_LocalStringFileCteater.framework */; };
+		5B7343862900E94300EFA73E /* Pods_LocalStringFileCteater.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 033C51FB9F14C7CC71A818DC /* Pods_LocalStringFileCteater.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5B7343872900E94300EFA73E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B7343862900E94300EFA73E /* Pods_LocalStringFileCteater.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		033C51FB9F14C7CC71A818DC /* Pods_LocalStringFileCteater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalStringFileCteater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6C633726F0555600096EAC /* LocalStringFileCteater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalStringFileCteater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6C633A26F0555600096EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6C633C26F0555600096EAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,7 +39,11 @@
 		5B6C634126F0555900096EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B6C634326F0555900096EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B6C634426F0555900096EAC /* LocalStringFileCteater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalStringFileCteater.entitlements; sourceTree = "<group>"; };
-		5B6C634B26F0563500096EAC /* RowStringFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RowStringFile; sourceTree = "<group>"; };
+		5B73437928FFF43500EFA73E /* RowStringFile.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = RowStringFile.xlsx; sourceTree = "<group>"; };
+		5B7343912902515A00EFA73E /* LocalStringFileCteaterDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalStringFileCteaterDebug.entitlements; sourceTree = "<group>"; };
+		83AE1184D94D8D81FB24C7D6 /* Pods-LocalStringFileCteater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalStringFileCteater.release.xcconfig"; path = "Target Support Files/Pods-LocalStringFileCteater/Pods-LocalStringFileCteater.release.xcconfig"; sourceTree = "<group>"; };
+		93A57805F72035E3BC86D23D /* Pods_LocalStringFileCteater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalStringFileCteater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		960ED5BD33FA093908893DB2 /* Pods-LocalStringFileCteater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalStringFileCteater.debug.xcconfig"; path = "Target Support Files/Pods-LocalStringFileCteater/Pods-LocalStringFileCteater.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +51,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B7343852900E94300EFA73E /* Pods_LocalStringFileCteater.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10EE79D0883FFE9B40035967 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				960ED5BD33FA093908893DB2 /* Pods-LocalStringFileCteater.debug.xcconfig */,
+				83AE1184D94D8D81FB24C7D6 /* Pods-LocalStringFileCteater.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5B6C632E26F0555600096EAC = {
 			isa = PBXGroup;
 			children = (
 				5B6C633926F0555600096EAC /* LocalStringFileCteater */,
 				5B6C633826F0555600096EAC /* Products */,
+				10EE79D0883FFE9B40035967 /* Pods */,
+				BC67267264B1D97E2AA97554 /* Frameworks */,
+				5B7343842900127A00EFA73E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +89,7 @@
 		5B6C633926F0555600096EAC /* LocalStringFileCteater */ = {
 			isa = PBXGroup;
 			children = (
+				5B7343912902515A00EFA73E /* LocalStringFileCteaterDebug.entitlements */,
 				5B6C634A26F0557400096EAC /* RowStringFile */,
 				5B6C633A26F0555600096EAC /* AppDelegate.swift */,
 				5B6C633C26F0555600096EAC /* ViewController.swift */,
@@ -69,9 +104,25 @@
 		5B6C634A26F0557400096EAC /* RowStringFile */ = {
 			isa = PBXGroup;
 			children = (
-				5B6C634B26F0563500096EAC /* RowStringFile */,
+				5B73437928FFF43500EFA73E /* RowStringFile.xlsx */,
 			);
 			path = RowStringFile;
+			sourceTree = "<group>";
+		};
+		5B7343842900127A00EFA73E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				93A57805F72035E3BC86D23D /* Pods_LocalStringFileCteater.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		BC67267264B1D97E2AA97554 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				033C51FB9F14C7CC71A818DC /* Pods_LocalStringFileCteater.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,9 +132,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B6C634726F0555900096EAC /* Build configuration list for PBXNativeTarget "LocalStringFileCteater" */;
 			buildPhases = (
+				A90B31DD216C31C3C18F0C62 /* [CP] Check Pods Manifest.lock */,
 				5B6C633326F0555600096EAC /* Sources */,
 				5B6C633426F0555600096EAC /* Frameworks */,
 				5B6C633526F0555600096EAC /* Resources */,
+				A651648561D1DFF6273AC7DD /* [CP] Embed Pods Frameworks */,
+				5B7343872900E94300EFA73E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -101,7 +155,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					5B6C633626F0555600096EAC = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -131,13 +185,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B6C634D26F0778200096EAC /* RowStringFile in Resources */,
+				5B73437A28FFF43500EFA73E /* RowStringFile.xlsx in Resources */,
 				5B6C633F26F0555900096EAC /* Assets.xcassets in Resources */,
 				5B6C634226F0555900096EAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A651648561D1DFF6273AC7DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocalStringFileCteater/Pods-LocalStringFileCteater-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LocalStringFileCteater/Pods-LocalStringFileCteater-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LocalStringFileCteater/Pods-LocalStringFileCteater-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A90B31DD216C31C3C18F0C62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LocalStringFileCteater-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B6C633326F0555600096EAC /* Sources */ = {
@@ -214,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -269,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -280,19 +376,27 @@
 		};
 		5B6C634826F0555900096EAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 960ED5BD33FA093908893DB2 /* Pods-LocalStringFileCteater.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LocalStringFileCteater/LocalStringFileCteater.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LocalStringFileCteater/LocalStringFileCteaterDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = SA82S27SRM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LocalStringFileCteater/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xm.common.LocalStringFileCteater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -302,10 +406,12 @@
 		};
 		5B6C634926F0555900096EAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83AE1184D94D8D81FB24C7D6 /* Pods-LocalStringFileCteater.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LocalStringFileCteater/LocalStringFileCteater.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
@@ -315,6 +421,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}\"",
+					/usr/lib/swift,
+				);
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xm.common.LocalStringFileCteater;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
