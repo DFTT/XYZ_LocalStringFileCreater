@@ -19,12 +19,16 @@ class ViewController: NSViewController {
         // 3. 查看生成的文件(~/Downloads/outStringFiles/)  拖动生成的文件夹到原项目中覆盖全部即可
 
         // 读文件
-        guard let filePath = Bundle.main.path(forResource: "RowStringFile", ofType: "xlsx") else {
-            print("Error: file not found~~~~")
-            return
-        }
+//        guard let filePath = Bundle.main.path(forResource: "RowStringFile", ofType: "xlsx") else {
+//            print("Error: file not found~~~~")
+//            return
+//        }
+//
+        let filePath = "/Users/dadadongl/Desktop/11111.xlsx"
 
-        fire(xmlPath: filePath, sheetName: "iOS", headRowIdx: 0, keyColumnIdx: 0)
+        fire(xmlPath: filePath,
+//             sheetName: "iOS",
+             headRowIdx: 0, keyColumnIdx: 0)
     }
 
     struct KeyValueItem {
@@ -111,7 +115,18 @@ class ViewController: NSViewController {
                         continue
                     }
                 }
+
                 var cellText = targetCell?.stringValue(allStrings) ?? ""
+                if cellText.isEmpty {
+                    // 可能是富文本
+                    if let arr = targetCell?.richStringValue(allStrings), arr.isEmpty == false {
+                        cellText = (arr.compactMap { $0.text } as [String]).joined()
+                    }
+                }
+                if cellText.isEmpty {
+                    // 异常
+                }
+
                 cellText = cellText.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
                 cellText = cellText.replacingOccurrences(of: "\n", with: "\\n")
 
@@ -122,6 +137,7 @@ class ViewController: NSViewController {
                     repeatKeyCout += 1
                 }
                 language.kvs[key] = KeyValueItem(key: key, value: cellText)
+                resMap[title] = language
             }
         }
         // 解析完成
@@ -132,12 +148,22 @@ class ViewController: NSViewController {
         resMap.forEach { _, language in
             language.kvs.forEach { _, value in
                 if value.value.isEmpty {
-                    print("发现译文为空的key: \(value.key) \n      \(value.value)")
+                    print("\(language.title) 发现译文为空的key: \(value.key) \n      \(value.value)")
                     eCount += 1
                 }
             }
         }
-        print("⚠️⚠️⚠️发现\(eCount)个key存在空译文 \n\n")
+        if eCount > 0 {
+            print("⚠️⚠️⚠️发现\(eCount)个key存在空译文 \n\n")
+        }
+
+        // 检查数量是否一致
+        let cont = resMap.first!.value.kvs.count
+        resMap.forEach { (key: String, value: LanguageKVs) in
+            if value.kvs.count != cont {
+                print("⚠️⚠️⚠️\(key) 的kv数量不等于 \(cont) \n\n")
+            }
+        }
 
         resMap.forEach { _, language in
             writeFile(language)
@@ -150,7 +176,7 @@ class ViewController: NSViewController {
 
 //        let defultMap = ios_defultConfig(key: language)!
         // 排序 拼接
-        var string = language.kvs.sorted { $0.0 < $1.0 }.map { "\"\($0)\" = \"\($1)\";" }.joined(separator: "\n")
+        var string = language.kvs.sorted { $0.0 < $1.0 }.map { "\"\($0)\" = \"\($1.value)\";" }.joined(separator: "\n")
         string.append("\n")
 //        string.append(kvTupleArr.map { "\"\($0)\" = \"\($1)\";" }.joined(separator: "\n"))
 
@@ -176,11 +202,10 @@ class ViewController: NSViewController {
     }
 
     private func ios_stringFileName(withKey key: String) -> String? {
-        let map = ["中文": "zh-Hans.lproj/TKLocalizable.strings",
-                   "英文": "en.lproj/TKLocalizable.strings",
-                   "马来语": "ms-MY.lproj/TKLocalizable.strings",
-                   "印尼语": "id.lproj/TKLocalizable.strings",
-                   "菲律宾语": "fil.lproj/TKLocalizable.strings"]
+        let map = ["简体中文": "zh-Hans.lproj/UNLocalizable.strings",
+                   "英语": "en.lproj/UNLocalizable.strings",
+                   "泰语": "th.lproj/UNLocalizable.strings",
+                   "越南语": "vi.lproj/UNLocalizable.strings"]
         return map[key]
     }
 }
