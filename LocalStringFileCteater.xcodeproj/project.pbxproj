@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B4462982B11D0A000FE2CEB /* LSFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4462972B11D0A000FE2CEB /* LSFileParser.swift */; };
 		5B6C633B26F0555600096EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C633A26F0555600096EAC /* AppDelegate.swift */; };
 		5B6C633D26F0555600096EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6C633C26F0555600096EAC /* ViewController.swift */; };
 		5B6C633F26F0555900096EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C633E26F0555900096EAC /* Assets.xcassets */; };
 		5B6C634226F0555900096EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6C634026F0555900096EAC /* Main.storyboard */; };
-		5B73437A28FFF43500EFA73E /* RowStringFile.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 5B73437928FFF43500EFA73E /* RowStringFile.xlsx */; };
 		5B7343852900E94300EFA73E /* Pods_LocalStringFileCteater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033C51FB9F14C7CC71A818DC /* Pods_LocalStringFileCteater.framework */; };
 		5B7343862900E94300EFA73E /* Pods_LocalStringFileCteater.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 033C51FB9F14C7CC71A818DC /* Pods_LocalStringFileCteater.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		033C51FB9F14C7CC71A818DC /* Pods_LocalStringFileCteater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalStringFileCteater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B4462972B11D0A000FE2CEB /* LSFileParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSFileParser.swift; sourceTree = "<group>"; };
 		5B6C633726F0555600096EAC /* LocalStringFileCteater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalStringFileCteater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6C633A26F0555600096EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6C633C26F0555600096EAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		5B6C634126F0555900096EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B6C634326F0555900096EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B6C634426F0555900096EAC /* LocalStringFileCteater.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalStringFileCteater.entitlements; sourceTree = "<group>"; };
-		5B73437928FFF43500EFA73E /* RowStringFile.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = RowStringFile.xlsx; sourceTree = "<group>"; };
 		5B7343912902515A00EFA73E /* LocalStringFileCteaterDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalStringFileCteaterDebug.entitlements; sourceTree = "<group>"; };
 		83AE1184D94D8D81FB24C7D6 /* Pods-LocalStringFileCteater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalStringFileCteater.release.xcconfig"; path = "Target Support Files/Pods-LocalStringFileCteater/Pods-LocalStringFileCteater.release.xcconfig"; sourceTree = "<group>"; };
 		93A57805F72035E3BC86D23D /* Pods_LocalStringFileCteater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LocalStringFileCteater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,23 +90,15 @@
 			isa = PBXGroup;
 			children = (
 				5B7343912902515A00EFA73E /* LocalStringFileCteaterDebug.entitlements */,
-				5B6C634A26F0557400096EAC /* RowStringFile */,
 				5B6C633A26F0555600096EAC /* AppDelegate.swift */,
 				5B6C633C26F0555600096EAC /* ViewController.swift */,
+				5B4462972B11D0A000FE2CEB /* LSFileParser.swift */,
 				5B6C633E26F0555900096EAC /* Assets.xcassets */,
 				5B6C634026F0555900096EAC /* Main.storyboard */,
 				5B6C634326F0555900096EAC /* Info.plist */,
 				5B6C634426F0555900096EAC /* LocalStringFileCteater.entitlements */,
 			);
 			path = LocalStringFileCteater;
-			sourceTree = "<group>";
-		};
-		5B6C634A26F0557400096EAC /* RowStringFile */ = {
-			isa = PBXGroup;
-			children = (
-				5B73437928FFF43500EFA73E /* RowStringFile.xlsx */,
-			);
-			path = RowStringFile;
 			sourceTree = "<group>";
 		};
 		5B7343842900127A00EFA73E /* Recovered References */ = {
@@ -186,7 +178,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B73437A28FFF43500EFA73E /* RowStringFile.xlsx in Resources */,
 				5B6C633F26F0555900096EAC /* Assets.xcassets in Resources */,
 				5B6C634226F0555900096EAC /* Main.storyboard in Resources */,
 			);
@@ -241,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4462982B11D0A000FE2CEB /* LSFileParser.swift in Sources */,
 				5B6C633D26F0555600096EAC /* ViewController.swift in Sources */,
 				5B6C633B26F0555600096EAC /* AppDelegate.swift in Sources */,
 			);
