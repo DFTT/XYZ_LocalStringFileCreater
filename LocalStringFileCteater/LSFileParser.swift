@@ -126,6 +126,23 @@ class LSFileParser {
             """
         )
 
+        // 临时用 去重
+//        resMap.first?.value.kvs.keys.forEach { ee in
+//            if let _ = arr.firstIndex(of: ee) {
+//
+//            }else {
+//                print(":: \(ee)")
+//            }
+//        }
+//        return ;
+        // 临时用
+//        let language: LanguageKVs = resMap["简体中文"]!
+//        var newmmm = [String: String]()
+//        language.kvs.forEach { _, item in
+//            newmmm[item.value] = item.key
+//            print("\"\(item.value)\" : \"\(item.key)\","  )
+//        }
+
         // 打印出译文为empty的
         var eCount = 0
         resMap.forEach { _, language in
@@ -206,11 +223,23 @@ class LSFileParser {
     }
 
     private func ios_stringFileName(withKey key: String) -> String? {
-        let map = ["简体中文": "zh-Hans.lproj/UNLocalizable.strings",
-                   "英语": "en.lproj/UNLocalizable.strings",
-                   "泰语": "th.lproj/UNLocalizable.strings",
-                   "越南语": "vi.lproj/UNLocalizable.strings"]
-        return map[key]
+        let map = [
+            "简体中文": "zh-Hans",
+            "英语": "en",
+            "泰语": "th",
+            "越南语": "vi",
+            "西班牙语": "es",
+            "葡萄牙语": "pt",
+            "印尼语": "id",
+            "印地语": "hi",
+            "土耳其语": "tr",
+            "阿拉伯语": "ar",
+            "繁体中文": "zh-Hant",
+            "繁体中文(香港)": "zh-HK",
+        ]
+        let isoCode = map[key]!
+        let fileName = "LCLocalizedFile"
+        return "\(isoCode).lproj/\(fileName).strings"
     }
 }
 
